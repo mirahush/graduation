@@ -3,6 +3,8 @@ package org.example
 import org.example.Direction.*
 
 class Rover {
+    private var position = RoverPosition()
+
     constructor(p: String) {
         val s = p.split(' ')
         if (s.size >= 3) { // magic number, data clump
@@ -70,8 +72,6 @@ class Rover {
     fun getCurrentPosition(): String {
         return "${position.getX()} ${position.getY()} ${position.getDirection().shortName}"
     }
-
-    private var position = RoverPosition()
 }
 
 class RoverPosition {

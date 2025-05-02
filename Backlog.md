@@ -41,6 +41,3 @@
           -[X] use getter for accessing y property
           -[X] use setter for updating y property
     - [] Make properties private in Rover
-        - [] make position property private
-        - [] make plateau property private
-        - [] make roverPosition property private
