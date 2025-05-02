@@ -53,8 +53,6 @@
 
 - [X] Move getCurrentPosition to RoverPosition class
 
-- [] methods working with moving logic should work with Rover object instead of RoverPosition object
+- [X] methods working with moving logic should work with Rover object instead of RoverPosition object
     - [X] Moving RoverPosition to a separate file
-    - []
-    - [] 
   

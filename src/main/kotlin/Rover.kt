@@ -26,19 +26,11 @@ class Rover {
 
     fun go(commands: String) {
         for (command in commands) {
-            executeCommand(command)
-        }
-    }
-
-    private fun executeCommand(command: Char) { // primitive obsession
-        when (command) {
-            'L' -> this.position.turnLeft()
-            'R' -> this.position.turnRight()
-            'M' -> this.position.move()
+            position.executeCommand(command)
         }
     }
 
     fun getCurrentPosition(): String {
-        return this.position.getCurrentPosition()
+        return position.getCurrentPosition()
     }
 }

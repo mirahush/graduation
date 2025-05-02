@@ -23,15 +23,23 @@ class RoverPosition {
         return "$xx $yy ${direction.shortName}"
     }
 
-    fun turnLeft() { // feature envy
+    fun executeCommand(command: Char) { // primitive obsession
+        when (command) {
+            'L' -> turnLeft()
+            'R' -> turnRight()
+            'M' -> move()
+        }
+    }
+
+    private fun turnLeft() { // feature envy
         direction = Direction.whatIsOnTheLeftOf(direction)
     }
 
-    fun turnRight() { // feature envy
+    private fun turnRight() { // feature envy
         direction = Direction.whatIsOnTheRightOf(direction)
     }
 
-    fun move() {
+    private fun move() {
         when (direction) {
             Direction.East -> moveRight()
             Direction.South -> moveDown()
