@@ -54,3 +54,6 @@
     - [X] move turnLeft to RoverPosition class
     - [X] move turnRight to RoverPosition class
     - [X] move the move method to RoverPosition class
+
+- [X] Move getCurrentPosition to RoverPosition class
+  

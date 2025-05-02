@@ -31,7 +31,7 @@ class Rover {
     }
 
     fun getCurrentPosition(): String {
-        return "${position.getX()} ${position.getY()} ${position.getDirection().shortName}"
+        return this.position.getCurrentPosition()
     }
 }
 
@@ -56,6 +56,10 @@ class RoverPosition {
 
     fun getDirection(): Direction {
         return direction
+    }
+
+    fun getCurrentPosition(): String {
+        return "$xx $yy ${direction.shortName}"
     }
 
     fun turnLeft() { // feature envy
