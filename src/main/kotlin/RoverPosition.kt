@@ -1,19 +1,18 @@
 package org.example
+
 import org.example.Direction.*
 
 class RoverPosition {
-    private var xx: Int = 0
-    private var yy: Int = 0
-    private var direction: Direction = Direction.North
+    private var coordinate: Coordinate
+    private var direction: Direction = North
 
     constructor(x: Int, y: Int, direction: Direction) {
-        this.xx = x
-        this.yy = y
+        this.coordinate = Coordinate(x, y)
         this.direction = direction
     }
 
     fun getCurrentPosition(): String {
-        return "$xx $yy ${direction.shortName}"
+        return "${coordinate.x} ${coordinate.y} ${direction.shortName}"
     }
 
     fun executeCommand(command: Char) {
@@ -41,19 +40,19 @@ class RoverPosition {
         }
     }
 
-    private fun moveDown() {
-        yy -= 1
+    private fun moveLeft() {
+        coordinate = coordinate.updateX(coordinate.x - 1)
     }
 
     private fun moveRight() {
-        xx += 1
+        coordinate = coordinate.updateX(coordinate.x + 1)
     }
 
     private fun moveUp() {
-        yy += 1
+        coordinate = coordinate.updateY(coordinate.y + 1)
     }
 
-    private fun moveLeft() {
-        xx -= 1
+    private fun moveDown() {
+        coordinate = coordinate.updateY(coordinate.y - 1)
     }
 }

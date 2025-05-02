@@ -55,4 +55,10 @@
 
 - [X] methods working with moving logic should work with Rover object instead of RoverPosition object
     - [X] Moving RoverPosition to a separate file
+
+- [X] Replace xx and yy with a coordinate class
+  - [X] create the coordinate class with a constructor
+  - [X] instantiate the coordinate class in RoverPosition class next to existing xx & yy
+  - [X] update coordinate instance where xx & yy are updated
+  - [X] Remove xx & yy
   
