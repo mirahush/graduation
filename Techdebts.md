@@ -24,3 +24,4 @@
  
 ### Done
 - [X] Add a test for HelloWorld class.
+- [X] Direction in Char has been replaced by direction in Enum
