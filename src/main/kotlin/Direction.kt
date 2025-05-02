@@ -45,5 +45,14 @@ enum class Direction {
                 North -> Direction.mapToChar(East)
             }
         }
+
+        fun whatIsOnTheRightOf(direction: Direction): Direction {
+            return when (direction) {
+                East -> South
+                South -> West
+                West -> North
+                North -> East
+            }
+        }
     }
 }

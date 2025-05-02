@@ -61,6 +61,7 @@ class Rover {
     }
 
     private fun determineNextDirectionForRightCommand() {
+        position.direction = Direction.whatIsOnTheRightOf(position.direction)
         position.dd = Direction.whatIsOnTheRightOf(position.dd)
     }
 
@@ -79,4 +80,5 @@ class RoverPosition {
     var xx: Int = 0
     var yy: Int = 0
     var dd: Char = 'N'
+    var direction: Direction = North
 }
