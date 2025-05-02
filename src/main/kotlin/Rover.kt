@@ -27,8 +27,6 @@ class Rover {
         return xyd
     }
 
-    constructor() : this("") // dead code
-
     private var rs = RoverState()
 }
 
