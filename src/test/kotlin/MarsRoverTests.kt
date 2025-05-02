@@ -25,6 +25,6 @@ class MarsRoverTests {
     fun `execute commands`(startingPosition: String, instructions: String, expectedOutput: String) {
         val rover = Rover(startingPosition)
         rover.go(instructions)
-        assertEquals(expectedOutput, rover.pos())
+        assertEquals(expectedOutput, rover.getCurrentPosition())
     }
 }

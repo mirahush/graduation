@@ -43,11 +43,8 @@ class Rover {
         }
     }
 
-    val xyd: String // scope incorrect
-        get() = "${position.xx} ${position.yy} ${position.dd}"
-
-    fun pos(): String {
-        return xyd
+    fun getCurrentPosition(): String {
+        return "${position.xx} ${position.yy} ${position.dd}"
     }
 
     private var position = RoverPosition()
