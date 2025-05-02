@@ -8,7 +8,7 @@ class Rover {
         if (s.size >= 3) { // magic number, data clump
             position.xx = s[0].toInt()
             position.yy = s[1].toInt()
-            position.direction = Direction.mapToDirection(s[2][0])
+            this.position.setDirection(Direction.mapToDirection(s[2][0]))
         }
     }
 
@@ -35,7 +35,7 @@ class Rover {
     }
 
     private fun determineNextDirectionForMoveCommand() {
-        when (position.direction) {
+        when (position.getDirection()) {
             East -> moveRight()
             South -> moveDown()
             West -> moveLeft()
@@ -59,16 +59,16 @@ class Rover {
         position.xx++
     }
 
-    private fun determineNextDirectionForRightCommand() {
-        position.direction = Direction.whatIsOnTheRightOf(position.direction)
+    private fun determineNextDirectionForRightCommand() { // feature envy
+        this.position.setDirection(Direction.whatIsOnTheRightOf(position.getDirection()))
     }
 
-    private fun determineNextDirectionForLeftCommand() {
-        position.direction = Direction.whatIsOnTheLeftOf(position.direction)
+    private fun determineNextDirectionForLeftCommand() { // feature envy
+        this.position.setDirection(Direction.whatIsOnTheLeftOf(position.getDirection()))
     }
 
     fun getCurrentPosition(): String {
-        return "${position.xx} ${position.yy} ${position.direction.shortName}"
+        return "${position.xx} ${position.yy} ${position.getDirection().shortName}"
     }
 
     private var position = RoverPosition()
@@ -77,5 +77,13 @@ class Rover {
 class RoverPosition {
     var xx: Int = 0
     var yy: Int = 0
-    var direction: Direction = North
+    private var direction: Direction = North
+
+    fun getDirection(): Direction {
+        return direction
+    }
+
+    fun setDirection(direction: Direction) {
+        this.direction = direction
+    }
 }

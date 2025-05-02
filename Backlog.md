@@ -21,3 +21,18 @@
             - [X] remove the direction property with char format from RoverPosition
         
  
+
+
+- [] Make properties private
+    - [] Make properties private in RoverPosition
+        - [X] make direction property private
+          - [X] create a getter for direction property
+          - [X] create a setter for direction property
+          - [X] use getter for accessing direction property
+          - [X] use setter for updating direction property
+        - [] make x property private
+        - [] make y property private
+    - [] Make properties private in Rover
+        - [] make position property private
+        - [] make plateau property private
+        - [] make roverPosition property private
