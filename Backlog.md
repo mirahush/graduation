@@ -1,4 +1,3 @@
-
 - [X] Get rid of Directions expressed in Char
     - [X] Introduce Enum for Directions
     - [X] Refactor the code to use Enum instead of Char
@@ -23,34 +22,39 @@
 - [X] Make properties private
     - [X] Make properties private in RoverPosition
         - [X] make direction property private
-          - [X] create a getter for direction property
-          - [X] create a setter for direction property
-          - [X] use getter for accessing direction property
-          - [X] use setter for updating direction property
+            - [X] create a getter for direction property
+            - [X] create a setter for direction property
+            - [X] use getter for accessing direction property
+            - [X] use setter for updating direction property
         - [X] make x property private
-          - [X] create a getter for x property
-          - [X] create a setter for x property
-          - [X] use getter for accessing x property
-          - [X] use setter for updating x property
+            - [X] create a getter for x property
+            - [X] create a setter for x property
+            - [X] use getter for accessing x property
+            - [X] use setter for updating x property
         - [X] make y property private
-          -[X] create a getter for y property
-          -[X] create a setter for y property
-          -[X] use getter for accessing y property
-          -[X] use setter for updating y property
+            -[X] create a getter for y property
+            -[X] create a setter for y property
+            -[X] use getter for accessing y property
+            -[X] use setter for updating y property
 
 - [X] Remove setters from RoverPosition class
-  - [X] Move instantiation of Position from Rover class to RoverPosition class
-      - [X] create a constructor in RoverPosition class
-      - [X] Use the constructor in Rover class
-  - [X] Move position changing logic to RoverPosition class
-    - [X] move moveDown to RoverPosition class
-    - [X] move moveUp to RoverPosition class
-    - [X] move moveLeft to RoverPosition class
-    - [X] move moveRight to RoverPosition class
-    - [X] remove setters from RoverPosition class
-    - [X] move turnLeft to RoverPosition class
-    - [X] move turnRight to RoverPosition class
-    - [X] move the move method to RoverPosition class
+    - [X] Move instantiation of Position from Rover class to RoverPosition class
+        - [X] create a constructor in RoverPosition class
+        - [X] Use the constructor in Rover class
+    - [X] Move position changing logic to RoverPosition class
+        - [X] move moveDown to RoverPosition class
+        - [X] move moveUp to RoverPosition class
+        - [X] move moveLeft to RoverPosition class
+        - [X] move moveRight to RoverPosition class
+        - [X] remove setters from RoverPosition class
+        - [X] move turnLeft to RoverPosition class
+        - [X] move turnRight to RoverPosition class
+        - [X] move the move method to RoverPosition class
 
 - [X] Move getCurrentPosition to RoverPosition class
+
+- [] methods working with moving logic should work with Rover object instead of RoverPosition object
+    - [X] Moving RoverPosition to a separate file
+    - []
+    - [] 
   
