@@ -1,8 +1,8 @@
 ## Tech-debts
 ### TODO
-- [ ] Get rid of Directions expressed in Char
+- [X] Get rid of Directions expressed in Char
   - [X] Introduce Enum for Directions
-  - [ ] Refactor the code to use Enum instead of Char
+  - [X] Refactor the code to use Enum instead of Char
     - [X] Create a mapper to convert Char to Enum 
     - [X] Use mapper in determineNextDirectionForMoveCommand method
     - [X] Use mapper in whatIsOnTheLeftOf method
@@ -12,7 +12,7 @@
       - [X] return mapped enum in whatIsOnTheLeftOf
     - [X] Move whatIsOnTheLeftOf and whatIsOnTheRightOf to Direction class
     - [X] adding Direction in Enum format to RoverPosition
-    - [] making sure that wherever we are using Direction in Char format, we are also using Enum format
+    - [X] making sure that wherever we are using Direction in Char format, we are also using Enum format
       - [X] update whatIsOnTheRightOf to accept Enum and char both as input
       - [X] update whatIsOnTheLeftOf to accept Enum and char both as input
       - [X] initialize direction property in the constructor of Rover
