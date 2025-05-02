@@ -36,6 +36,15 @@ enum class Direction {
             }
         }
 
+        fun whatIsOnTheLeftOf(direction: Direction): Direction { // Primitive Obsession
+            return when (direction) {
+                East -> North
+                North -> West
+                West -> South
+                South -> East
+            }
+        }
+
         fun whatIsOnTheRightOf(direction: Char): Char {
             val mappedDirection = Direction.mapToDirection(direction)
             return when (mappedDirection) {

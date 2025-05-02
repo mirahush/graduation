@@ -14,7 +14,7 @@
     - [X] adding Direction in Enum format to RoverPosition
     - [] making sure that wherever we are using Direction in Char format, we are also using Enum format
       - [X] update whatIsOnTheRightOf to accept Enum and char both as input
-      - [] update whatIsOnTheLeftOf to accept Enum and char both as input
+      - [X] update whatIsOnTheLeftOf to accept Enum and char both as input
  
 ### Done
 - [X] Add a test for HelloWorld class.

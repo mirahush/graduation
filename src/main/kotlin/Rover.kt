@@ -66,6 +66,7 @@ class Rover {
     }
 
     private fun determineNextDirectionForLeftCommand() {
+        position.direction = Direction.whatIsOnTheLeftOf(position.direction)
         position.dd = Direction.whatIsOnTheLeftOf(position.dd)
     }
 
