@@ -1,4 +1,5 @@
 package org.example
+import org.example.Direction.*
 
 class RoverPosition {
     private var xx: Int = 0
@@ -33,10 +34,10 @@ class RoverPosition {
 
     private fun move() {
         when (direction) {
-            Direction.East -> moveRight()
-            Direction.South -> moveDown()
-            Direction.West -> moveLeft()
-            Direction.North -> moveUp()
+            East -> moveRight()
+            South -> moveDown()
+            West -> moveLeft()
+            North -> moveUp()
         }
     }
 
