@@ -61,4 +61,9 @@
   - [X] instantiate the coordinate class in RoverPosition class next to existing xx & yy
   - [X] update coordinate instance where xx & yy are updated
   - [X] Remove xx & yy
+
+- [X] make properties of Coordinate class private
+  - [X] create toString method for Coordinate class
+  - [X] move functionalities regarding change in coordinates to Coordinate class
+
   

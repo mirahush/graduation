@@ -12,7 +12,7 @@ class RoverPosition {
     }
 
     fun getCurrentPosition(): String {
-        return "${coordinate.x} ${coordinate.y} ${direction.shortName}"
+        return "$coordinate ${direction.shortName}"
     }
 
     fun executeCommand(command: Char) {
@@ -32,27 +32,11 @@ class RoverPosition {
     }
 
     private fun move() {
-        when (direction) {
-            East -> moveRight()
-            South -> moveDown()
-            West -> moveLeft()
-            North -> moveUp()
+        coordinate = when (direction) {
+            East -> coordinate.moveRight()
+            South -> coordinate.moveDown()
+            West -> coordinate.moveLeft()
+            North -> coordinate.moveUp()
         }
-    }
-
-    private fun moveLeft() {
-        coordinate = coordinate.updateX(coordinate.x - 1)
-    }
-
-    private fun moveRight() {
-        coordinate = coordinate.updateX(coordinate.x + 1)
-    }
-
-    private fun moveUp() {
-        coordinate = coordinate.updateY(coordinate.y + 1)
-    }
-
-    private fun moveDown() {
-        coordinate = coordinate.updateY(coordinate.y - 1)
     }
 }
