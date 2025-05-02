@@ -79,6 +79,14 @@ class RoverPosition {
     var yy: Int = 0
     private var direction: Direction = North
 
+    fun getX(): Int {
+        return xx
+    }
+
+    fun setX(x: Int) {
+        this.xx = x
+    }
+
     fun getDirection(): Direction {
         return direction
     }

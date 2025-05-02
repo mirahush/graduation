@@ -31,6 +31,10 @@
           - [X] use getter for accessing direction property
           - [X] use setter for updating direction property
         - [] make x property private
+          - [] create a getter for x property
+          - [] create a setter for x property
+          - [] use getter for accessing x property
+          - [] use setter for updating x property
         - [] make y property private
     - [] Make properties private in Rover
         - [] make position property private
