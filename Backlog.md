@@ -35,7 +35,11 @@
           - [X] create a setter for x property
           - [X] use getter for accessing x property
           - [X] use setter for updating x property
-        - [] make y property private
+        - [X] make y property private
+          -[X] create a getter for y property
+          -[X] create a setter for y property
+          -[X] use getter for accessing y property
+          -[X] use setter for updating y property
     - [] Make properties private in Rover
         - [] make position property private
         - [] make plateau property private
