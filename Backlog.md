@@ -19,9 +19,6 @@
                 - [X] create enum value for directions so that the first letter is returned
             - [X] update the method called determineNextDirectionForMoveCommand to work with position.direction
             - [X] remove the direction property with char format from RoverPosition
-        
- 
-
 
 - [X] Make properties private
     - [X] Make properties private in RoverPosition
@@ -56,4 +53,5 @@
     - [X] move the move method to RoverPosition class
 
 - [X] Move getCurrentPosition to RoverPosition class
+
   
