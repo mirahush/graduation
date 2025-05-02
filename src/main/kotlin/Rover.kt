@@ -4,33 +4,56 @@ class Rover {
     constructor(p: String) {
         val s = p.split(' ')
         if (s.size >= 3) { // magic number
-            rs.xx = s[0].toInt()
-            rs.yy = s[1].toInt()
-            rs.dd = s[2][0]
+            position.xx = s[0].toInt()
+            position.yy = s[1].toInt()
+            position.dd = s[2][0]
         }
     }
 
     fun go(cms: String) {
         for (c in cms) {
             when (c) {
-                'L' -> { when (rs.dd) { 'E' -> rs.dd = 'N' 'N' -> rs.dd = 'W' 'W' -> rs.dd = 'S' 'S' -> rs.dd = 'E' } }
-                'R' -> { when (rs.dd) { 'E' -> rs.dd = 'S' 'S' -> rs.dd = 'W' 'W' -> rs.dd = 'N' 'N' -> rs.dd = 'E' } }
-                'M' -> { when (rs.dd) { 'E' -> rs.xx++ 'S' -> rs.yy-- 'W' -> rs.xx-- 'N' -> rs.yy++ } }
+                'L' -> {
+                    when (position.dd) {
+                        'E' -> position.dd = 'N'
+                        'N' -> position.dd = 'W'
+                        'W' -> position.dd = 'S'
+                        'S' -> position.dd = 'E'
+                    }
+                }
+
+                'R' -> {
+                    when (position.dd) {
+                        'E' -> position.dd = 'S'
+                        'S' -> position.dd = 'W'
+                        'W' -> position.dd = 'N'
+                        'N' -> position.dd = 'E'
+                    }
+                }
+
+                'M' -> {
+                    when (position.dd) {
+                        'E' -> position.xx++
+                        'S' -> position.yy--
+                        'W' -> position.xx--
+                        'N' -> position.yy++
+                    }
+                }
             }
         }
     }
 
     val xyd: String // scope incorrect
-        get() = "${rs.xx} ${rs.yy} ${rs.dd}"
+        get() = "${position.xx} ${position.yy} ${position.dd}"
 
     fun pos(): String {
         return xyd
     }
 
-    private var rs = RoverState()
+    private var position = RoverPosition()
 }
 
-class RoverState {
+class RoverPosition {
     var xx: Int = 0
     var yy: Int = 0
     var dd: Char = 'N'
