@@ -6,12 +6,12 @@ class Rover {
     private lateinit var position: RoverPosition
 
     constructor(p: String) {
-        val s = p.split(' ')
-        if (s.size >= 3) { // magic number, data clump
+        val startingPosition = p.split(' ')
+        if (startingPosition.size >= 3) { // magic number, data clump
             this.position = RoverPosition(
-                s[0].toInt(),
-                s[1].toInt(),
-                Direction.mapToDirection(s[2][0])
+                startingPosition[0].toInt(),
+                startingPosition[1].toInt(),
+                Direction.mapToDirection(startingPosition[2][0])
             )
         }
     }
