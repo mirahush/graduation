@@ -6,7 +6,7 @@ class Rover {
     constructor(p: String) {
         val s = p.split(' ')
         if (s.size >= 3) { // magic number, data clump
-            position.xx = s[0].toInt()
+            this.position.setX(s[0].toInt())
             position.yy = s[1].toInt()
             this.position.setDirection(Direction.mapToDirection(s[2][0]))
         }
@@ -52,11 +52,11 @@ class Rover {
     }
 
     private fun moveLeft() {
-        position.xx--
+        this.position.setX(this.position.getX() - 1)
     }
 
     private fun moveRight() {
-        position.xx++
+        this.position.setX(this.position.getX() + 1)
     }
 
     private fun determineNextDirectionForRightCommand() { // feature envy
@@ -68,14 +68,14 @@ class Rover {
     }
 
     fun getCurrentPosition(): String {
-        return "${position.xx} ${position.yy} ${position.getDirection().shortName}"
+        return "${position.getX()} ${position.yy} ${position.getDirection().shortName}"
     }
 
     private var position = RoverPosition()
 }
 
 class RoverPosition {
-    var xx: Int = 0
+    private var xx: Int = 0
     var yy: Int = 0
     private var direction: Direction = North
 
