@@ -72,7 +72,7 @@ class Rover {
     }
 
     fun getCurrentPosition(): String {
-        return "${position.xx} ${position.yy} ${position.dd}"
+        return "${position.xx} ${position.yy} ${position.direction.shortName}"
     }
 
     private var position = RoverPosition()
