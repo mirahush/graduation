@@ -31,6 +31,10 @@ tasks.withType<KotlinCompile> {
     }
 }
 
+tasks.withType<org.springframework.boot.gradle.tasks.bundling.BootJar> {
+    enabled = false
+}
+
 tasks.withType<Test> {
     useJUnitPlatform()
 }
