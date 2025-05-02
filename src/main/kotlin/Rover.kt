@@ -73,7 +73,6 @@ class Rover {
     }
 
     private var position = RoverPosition()
-
 }
 
 class RoverPosition {

@@ -46,5 +46,4 @@ enum class Direction {
             }
         }
     }
-
 }
