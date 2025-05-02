@@ -51,3 +51,6 @@
     - [X] move moveLeft to RoverPosition class
     - [X] move moveRight to RoverPosition class
     - [X] remove setters from RoverPosition class
+    - [X] move turnLeft to RoverPosition class
+    - [X] move turnRight to RoverPosition class
+    - [] move the move method to RoverPosition class

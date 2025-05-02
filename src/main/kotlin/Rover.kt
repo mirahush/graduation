@@ -24,8 +24,8 @@ class Rover {
 
     private fun executeCommand(command: Char) { // primitive obsession
         when (command) {
-            'L' -> turnLeft()
-            'R' -> turnRight()
+            'L' -> this.position.turnLeft()
+            'R' -> this.position.turnRight()
             'M' -> move()
         }
     }
@@ -37,14 +37,6 @@ class Rover {
             West -> this.position.moveLeft()
             North -> this.position.moveUp()
         }
-    }
-
-    private fun turnRight() { // feature envy
-        this.position.setDirection(Direction.whatIsOnTheRightOf(position.getDirection()))
-    }
-
-    private fun turnLeft() { // feature envy
-        this.position.setDirection(Direction.whatIsOnTheLeftOf(position.getDirection()))
     }
 
     fun getCurrentPosition(): String {
@@ -93,5 +85,13 @@ class RoverPosition {
 
     fun moveLeft() {
         xx = this.getX() - 1
+    }
+
+    fun turnLeft() { // feature envy
+        direction = Direction.whatIsOnTheLeftOf(direction)
+    }
+
+    fun turnRight() { // feature envy
+        direction = Direction.whatIsOnTheRightOf(direction)
     }
 }
