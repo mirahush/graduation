@@ -1,0 +1,21 @@
+# Gradle
+.gradle/
+build/
+out/
+
+# Java
+*.class
+
+# Kotlin
+*.kt~
+*.kts~
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Logs
+logs/
+*.log
