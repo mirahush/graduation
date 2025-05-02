@@ -26,16 +26,7 @@ class Rover {
         when (command) {
             'L' -> this.position.turnLeft()
             'R' -> this.position.turnRight()
-            'M' -> move()
-        }
-    }
-
-    private fun move() {
-        when (position.getDirection()) {
-            East -> this.position.moveRight()
-            South -> this.position.moveDown()
-            West -> this.position.moveLeft()
-            North -> this.position.moveUp()
+            'M' -> this.position.move()
         }
     }
 
@@ -71,27 +62,36 @@ class RoverPosition {
         this.direction = direction
     }
 
-    fun moveDown() {
-        yy = this.getY() - 1
-    }
-
-    fun moveRight() {
-        xx = this.getX() + 1
-    }
-
-    fun moveUp() {
-        yy = this.getY() + 1
-    }
-
-    fun moveLeft() {
-        xx = this.getX() - 1
-    }
-
     fun turnLeft() { // feature envy
         direction = Direction.whatIsOnTheLeftOf(direction)
     }
 
     fun turnRight() { // feature envy
         direction = Direction.whatIsOnTheRightOf(direction)
+    }
+
+    fun move() {
+        when (direction) {
+            East -> moveRight()
+            South -> moveDown()
+            West -> moveLeft()
+            North -> moveUp()
+        }
+    }
+
+    private fun moveDown() {
+        yy = this.getY() - 1
+    }
+
+    private fun moveRight() {
+        xx = this.getX() + 1
+    }
+
+    private fun moveUp() {
+        yy = this.getY() + 1
+    }
+
+    private fun moveLeft() {
+        xx = this.getX() - 1
     }
 }

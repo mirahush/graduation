@@ -45,7 +45,7 @@
   - [X] Move instantiation of Position from Rover class to RoverPosition class
       - [X] create a constructor in RoverPosition class
       - [X] Use the constructor in Rover class
-  - [] Move position changing logic to RoverPosition class
+  - [X] Move position changing logic to RoverPosition class
     - [X] move moveDown to RoverPosition class
     - [X] move moveUp to RoverPosition class
     - [X] move moveLeft to RoverPosition class
@@ -53,4 +53,4 @@
     - [X] remove setters from RoverPosition class
     - [X] move turnLeft to RoverPosition class
     - [X] move turnRight to RoverPosition class
-    - [] move the move method to RoverPosition class
+    - [X] move the move method to RoverPosition class
