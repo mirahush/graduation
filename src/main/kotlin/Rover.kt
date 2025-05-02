@@ -5,6 +5,7 @@ class Rover {
 
     constructor(startingPosition: String) {
         val parsedStartingPosition = parseStartingPosition(startingPosition)
+
         position = RoverPosition(
             parsedStartingPosition.first,
             parsedStartingPosition.second,
