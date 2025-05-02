@@ -58,10 +58,6 @@ class RoverPosition {
         return direction
     }
 
-    fun setDirection(direction: Direction) {
-        this.direction = direction
-    }
-
     fun turnLeft() { // feature envy
         direction = Direction.whatIsOnTheLeftOf(direction)
     }

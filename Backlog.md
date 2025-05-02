@@ -41,7 +41,7 @@
           -[X] use getter for accessing y property
           -[X] use setter for updating y property
 
-- [] Remove setters from RoverPosition class
+- [X] Remove setters from RoverPosition class
   - [X] Move instantiation of Position from Rover class to RoverPosition class
       - [X] create a constructor in RoverPosition class
       - [X] Use the constructor in Rover class
