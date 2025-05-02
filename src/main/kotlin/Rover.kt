@@ -1,5 +1,6 @@
 package org.example
 
+import org.example.Direction.*
 class Rover {
     constructor(p: String) {
         val s = p.split(' ')
@@ -35,10 +36,10 @@ class Rover {
     private fun determineNextDirectionForMoveCommand() {
         var direction = Direction.map(position.dd) // Primitive Obsession
         when (direction) {
-            Direction.East -> moveRight()
-            Direction.South -> moveDown()
-            Direction.West -> moveLeft()
-            Direction.North -> moveUp()
+            East -> moveRight()
+            South -> moveDown()
+            West -> moveLeft()
+            North -> moveUp()
         }
     }
 
@@ -69,10 +70,10 @@ class Rover {
     private fun whatIsOnTheLeftOf(direction: Char): Char { // Primitive Obsession
         val mappedDirection = Direction.map(direction)
         return when (mappedDirection) {
-            Direction.East -> Direction.map(Direction.North)
-            Direction.North -> Direction.map(Direction.West)
-            Direction.West -> Direction.map(Direction.South)
-            Direction.South -> Direction.map(Direction.East)
+            East -> Direction.map(North)
+            North -> Direction.map(West)
+            West -> Direction.map(South)
+            South -> Direction.map(East)
         }
     }
 
