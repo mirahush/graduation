@@ -14,32 +14,53 @@ class Rover {
         for (c in cms) {
             when (c) {
                 'L' -> {
-                    when (position.dd) {
-                        'E' -> position.dd = 'N'
-                        'N' -> position.dd = 'W'
-                        'W' -> position.dd = 'S'
-                        'S' -> position.dd = 'E'
-                    }
+                    determineNextDirectionForLeftCommand()
                 }
 
                 'R' -> {
-                    when (position.dd) {
-                        'E' -> position.dd = 'S'
-                        'S' -> position.dd = 'W'
-                        'W' -> position.dd = 'N'
-                        'N' -> position.dd = 'E'
-                    }
+                    determineNextDirectionForRightCommand()
                 }
 
                 'M' -> {
-                    when (position.dd) {
-                        'E' -> position.xx++
-                        'S' -> position.yy--
-                        'W' -> position.xx--
-                        'N' -> position.yy++
-                    }
+                    determineNextDirectionForMoveCommand()
                 }
             }
+        }
+    }
+
+    private fun determineNextDirectionForMoveCommand() {
+        when (position.dd) {
+            'E' -> position.xx++
+            'S' -> position.yy--
+            'W' -> position.xx--
+            'N' -> position.yy++
+        }
+    }
+
+    private fun determineNextDirectionForRightCommand() {
+        position.dd = whatIsOnTheRightOf(position.dd)
+    }
+
+    private fun determineNextDirectionForLeftCommand() {
+        position.dd = whatIsOnTheLeftOf(position.dd)
+    }
+
+    private fun whatIsOnTheLeftOf(direction: Char): Char { // Primitive Obsession
+        return when (direction) {
+            'E' -> 'N'
+            'N' -> 'W'
+            'W' -> 'S'
+            'S' -> 'E'
+            else -> throw IllegalArgumentException("Invalid direction")
+        }
+    }
+    private fun whatIsOnTheRightOf(direction: Char): Char {
+        return when (direction) {
+            'E' -> 'S'
+            'S' -> 'W'
+            'W' -> 'N'
+            'N' -> 'E'
+            else -> throw IllegalArgumentException("Invalid direction")
         }
     }
 
