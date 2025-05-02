@@ -24,50 +24,26 @@ class Rover {
 
     private fun executeCommand(command: Char) { // primitive obsession
         when (command) {
-            'L' -> {
-                determineNextDirectionForLeftCommand()
-            }
-
-            'R' -> {
-                determineNextDirectionForRightCommand()
-            }
-
-            'M' -> {
-                determineNextDirectionForMoveCommand()
-            }
+            'L' -> turnLeft()
+            'R' -> turnRight()
+            'M' -> move()
         }
     }
 
-    private fun determineNextDirectionForMoveCommand() {
+    private fun move() {
         when (position.getDirection()) {
-            East -> moveRight()
-            South -> moveDown()
-            West -> moveLeft()
-            North -> moveUp()
+            East -> this.position.moveRight()
+            South -> this.position.moveDown()
+            West -> this.position.moveLeft()
+            North -> this.position.moveUp()
         }
     }
 
-    private fun moveDown() {
-        this.position.setY(this.position.getY() - 1)
-    }
-
-    private fun moveUp() {
-        this.position.setY(this.position.getY() + 1)
-    }
-
-    private fun moveLeft() {
-        this.position.setX(this.position.getX() - 1)
-    }
-
-    private fun moveRight() {
-        this.position.setX(this.position.getX() + 1)
-    }
-
-    private fun determineNextDirectionForRightCommand() { // feature envy
+    private fun turnRight() { // feature envy
         this.position.setDirection(Direction.whatIsOnTheRightOf(position.getDirection()))
     }
 
-    private fun determineNextDirectionForLeftCommand() { // feature envy
+    private fun turnLeft() { // feature envy
         this.position.setDirection(Direction.whatIsOnTheLeftOf(position.getDirection()))
     }
 
@@ -91,16 +67,8 @@ class RoverPosition {
         return xx
     }
 
-    fun setX(x: Int) {
-        this.xx = x
-    }
-
     fun getY(): Int {
         return yy
-    }
-
-    fun setY(y: Int) {
-        this.yy = y
     }
 
     fun getDirection(): Direction {
@@ -109,5 +77,21 @@ class RoverPosition {
 
     fun setDirection(direction: Direction) {
         this.direction = direction
+    }
+
+    fun moveDown() {
+        yy = this.getY() - 1
+    }
+
+    fun moveRight() {
+        xx = this.getX() + 1
+    }
+
+    fun moveUp() {
+        yy = this.getY() + 1
+    }
+
+    fun moveLeft() {
+        xx = this.getX() - 1
     }
 }

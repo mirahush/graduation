@@ -46,4 +46,8 @@
       - [X] create a constructor in RoverPosition class
       - [X] Use the constructor in Rover class
   - [] Move position changing logic to RoverPosition class
-    - 
+    - [X] move moveDown to RoverPosition class
+    - [X] move moveUp to RoverPosition class
+    - [X] move moveLeft to RoverPosition class
+    - [X] move moveRight to RoverPosition class
+    - [X] remove setters from RoverPosition class
