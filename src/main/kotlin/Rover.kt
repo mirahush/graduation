@@ -67,12 +67,12 @@ class Rover {
     }
 
     private fun whatIsOnTheLeftOf(direction: Char): Char { // Primitive Obsession
-        return when (direction) {
-            'E' -> 'N'
-            'N' -> 'W'
-            'W' -> 'S'
-            'S' -> 'E'
-            else -> throw IllegalArgumentException("Invalid direction")
+        val mappedDirection = Direction.map(direction)
+        return when (mappedDirection) {
+            Direction.East -> Direction.map(Direction.North)
+            Direction.North -> Direction.map(Direction.West)
+            Direction.West -> Direction.map(Direction.South)
+            Direction.South -> Direction.map(Direction.East)
         }
     }
 

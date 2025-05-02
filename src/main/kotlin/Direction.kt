@@ -16,6 +16,14 @@ enum class Direction {
                 else -> throw IllegalArgumentException("Invalid direction")
             }
         }
+        fun map(direction: Direction): Char {
+            return when (direction) {
+                North -> 'N'
+                West -> 'W'
+                South -> 'S'
+                East -> 'E'
+            }
+        }
     }
 
 }
