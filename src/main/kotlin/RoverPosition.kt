@@ -11,14 +11,6 @@ class RoverPosition {
         this.direction = direction
     }
 
-    private fun getX(): Int {
-        return xx
-    }
-
-    private fun getY(): Int {
-        return yy
-    }
-
     fun getCurrentPosition(): String {
         return "$xx $yy ${direction.shortName}"
     }
@@ -49,18 +41,18 @@ class RoverPosition {
     }
 
     private fun moveDown() {
-        yy = this.getY() - 1
+        yy -= 1
     }
 
     private fun moveRight() {
-        xx = this.getX() + 1
+        xx += 1
     }
 
     private fun moveUp() {
-        yy = this.getY() + 1
+        yy += 1
     }
 
     private fun moveLeft() {
-        xx = this.getX() - 1
+        xx -= 1
     }
 }
