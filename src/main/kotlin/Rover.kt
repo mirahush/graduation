@@ -12,15 +12,17 @@ class Rover {
         )
     }
 
-    private fun parseStartingPosition(p: String): Triple<Int, Int, Direction> {
-        val startingPosition = p.split(' ')
-        if (startingPosition.size < 3) {
+    private fun parseStartingPosition(startingPosition: String): Triple<Int, Int, Direction> {
+        val splittedStartingPosition = startingPosition.split(' ')
+
+        if (splittedStartingPosition.size < 3) {
             throw RuntimeException("Invalid starting position. Less than 3 arguments are provided. Unable to determine the rover's position.")
         }
+
         return Triple(
-            startingPosition[0].toInt(),
-            startingPosition[1].toInt(),
-            Direction.mapToDirection(startingPosition[2][0])
+            splittedStartingPosition[0].toInt(),
+            splittedStartingPosition[1].toInt(),
+            Direction.mapToDirection(splittedStartingPosition[2][0])
         )
     }
 
