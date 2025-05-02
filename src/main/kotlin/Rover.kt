@@ -68,31 +68,33 @@ class Rover {
         position.dd = whatIsOnTheLeftOf(position.dd)
     }
 
-    private fun whatIsOnTheLeftOf(direction: Char): Char { // Primitive Obsession
-        val mappedDirection = Direction.map(direction)
-        return when (mappedDirection) {
-            East -> Direction.map(North)
-            North -> Direction.map(West)
-            West -> Direction.map(South)
-            South -> Direction.map(East)
-        }
-    }
-
-    private fun whatIsOnTheRightOf(direction: Char): Char {
-        val mappedDirection = Direction.map(direction)
-        return when (mappedDirection) {
-            East -> Direction.map(South)
-            South -> Direction.map(West)
-            West -> Direction.map(North)
-            North -> Direction.map(East)
-        }
-    }
-
     fun getCurrentPosition(): String {
         return "${position.xx} ${position.yy} ${position.dd}"
     }
 
     private var position = RoverPosition()
+
+    companion object {
+        private fun whatIsOnTheLeftOf(direction: Char): Char { // Primitive Obsession
+            val mappedDirection = Direction.map(direction)
+            return when (mappedDirection) {
+                East -> Direction.map(North)
+                North -> Direction.map(West)
+                West -> Direction.map(South)
+                South -> Direction.map(East)
+            }
+        }
+
+        private fun whatIsOnTheRightOf(direction: Char): Char {
+            val mappedDirection = Direction.map(direction)
+            return when (mappedDirection) {
+                East -> Direction.map(South)
+                South -> Direction.map(West)
+                West -> Direction.map(North)
+                North -> Direction.map(East)
+            }
+        }
+    }
 }
 
 class RoverPosition {
