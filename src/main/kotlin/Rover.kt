@@ -1,6 +1,7 @@
 package org.example
 
 import org.example.Direction.*
+
 class Rover {
     constructor(p: String) {
         val s = p.split(' ')
@@ -78,12 +79,12 @@ class Rover {
     }
 
     private fun whatIsOnTheRightOf(direction: Char): Char {
-        return when (direction) {
-            'E' -> 'S'
-            'S' -> 'W'
-            'W' -> 'N'
-            'N' -> 'E'
-            else -> throw IllegalArgumentException("Invalid direction")
+        val mappedDirection = Direction.map(direction)
+        return when (mappedDirection) {
+            East -> Direction.map(South)
+            South -> Direction.map(West)
+            West -> Direction.map(North)
+            North -> Direction.map(East)
         }
     }
 

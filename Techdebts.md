@@ -8,8 +8,8 @@
     - [X] Use mapper in whatIsOnTheLeftOf method
       - [X] create a mapper to convert Enum to Char
       - [X] return mapped enum in whatIsOnTheLeftOf
-    - [ ] Use mapper in whatIsOnTheRightOf method
-      - [] return mapped enum in whatIsOnTheLeftOf
+    - [X] Use mapper in whatIsOnTheRightOf method
+      - [X] return mapped enum in whatIsOnTheLeftOf
 
 ### Done
 - [X] Add a test for HelloWorld class.
