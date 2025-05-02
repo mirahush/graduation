@@ -3,7 +3,7 @@ package org.example
 class Rover {
     constructor(p: String) {
         val s = p.split(' ')
-        if (s.size >= 3) {
+        if (s.size >= 3) { // magic number
             rs.xx = s[0].toInt()
             rs.yy = s[1].toInt()
             rs.dd = s[2][0]
@@ -20,18 +20,14 @@ class Rover {
         }
     }
 
-    fun g(z: Char) {
-        go(z.toString())
-    }
-
-    val xyd: String
+    val xyd: String // scope incorrect
         get() = "${rs.xx} ${rs.yy} ${rs.dd}"
 
     fun pos(): String {
         return xyd
     }
 
-    constructor() : this("")
+    constructor() : this("") // dead code
 
     private var rs = RoverState()
 }
