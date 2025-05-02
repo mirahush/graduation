@@ -10,9 +10,9 @@ class Rover {
         }
     }
 
-    fun go(cms: String) { // long method, duplicate code, feature envy
-        for (c in cms) {
-            when (c) {
+    fun go(commands: String) { // long method, duplicate code, feature envy
+        for (command in commands) {
+            when (command) {
                 'L' -> {
                     determineNextDirectionForLeftCommand()
                 }
