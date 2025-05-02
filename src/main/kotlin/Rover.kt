@@ -30,11 +30,27 @@ class Rover {
 
     private fun determineNextDirectionForMoveCommand() {
         when (position.dd) {
-            'E' -> position.xx++
-            'S' -> position.yy--
-            'W' -> position.xx--
-            'N' -> position.yy++
+            'E' -> moveRight()
+            'S' -> moveDown()
+            'W' -> moveLeft()
+            'N' -> moveUp()
         }
+    }
+
+    private fun moveDown() {
+        position.yy--
+    }
+
+    private fun moveUp() {
+        position.yy++
+    }
+
+    private fun moveLeft() {
+        position.xx--
+    }
+
+    private fun moveRight() {
+        position.xx++
     }
 
     private fun determineNextDirectionForRightCommand() {
@@ -54,6 +70,7 @@ class Rover {
             else -> throw IllegalArgumentException("Invalid direction")
         }
     }
+
     private fun whatIsOnTheRightOf(direction: Char): Char {
         return when (direction) {
             'E' -> 'S'
