@@ -19,6 +19,7 @@
       - [X] update the method called getCurrentPosition to return the direction in Enum format
         - [X] create enum value for directions so that the first letter is returned
       - [X] update the method called determineNextDirectionForMoveCommand to work with position.direction
+      - [X] remove the direction property with char format from RoverPosition
         
  
 ### Done

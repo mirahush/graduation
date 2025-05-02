@@ -8,7 +8,6 @@ class Rover {
         if (s.size >= 3) { // magic number, data clump
             position.xx = s[0].toInt()
             position.yy = s[1].toInt()
-            position.dd = s[2][0]
             position.direction = Direction.mapToDirection(s[2][0])
         }
     }
@@ -62,12 +61,10 @@ class Rover {
 
     private fun determineNextDirectionForRightCommand() {
         position.direction = Direction.whatIsOnTheRightOf(position.direction)
-        position.dd = Direction.whatIsOnTheRightOf(position.dd)
     }
 
     private fun determineNextDirectionForLeftCommand() {
         position.direction = Direction.whatIsOnTheLeftOf(position.direction)
-        position.dd = Direction.whatIsOnTheLeftOf(position.dd)
     }
 
     fun getCurrentPosition(): String {
@@ -80,6 +77,5 @@ class Rover {
 class RoverPosition {
     var xx: Int = 0
     var yy: Int = 0
-    var dd: Char = 'N'
     var direction: Direction = North
 }
