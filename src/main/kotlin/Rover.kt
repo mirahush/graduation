@@ -3,14 +3,14 @@ package org.example
 class Rover {
     constructor(p: String) {
         val s = p.split(' ')
-        if (s.size >= 3) { // magic number
+        if (s.size >= 3) { // magic number, data clump
             position.xx = s[0].toInt()
             position.yy = s[1].toInt()
             position.dd = s[2][0]
         }
     }
 
-    fun go(cms: String) {
+    fun go(cms: String) { // long method, duplicate code, feature envy
         for (c in cms) {
             when (c) {
                 'L' -> {
