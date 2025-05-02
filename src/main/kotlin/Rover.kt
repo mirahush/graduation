@@ -3,17 +3,27 @@ package org.example
 import org.example.Direction.*
 
 class Rover {
-    private lateinit var position: RoverPosition
+    private var position: RoverPosition
 
-    constructor(p: String) {
+    constructor(startingPosition: String) {
+        val parsedStartingPosition = parseStartingPosition(startingPosition)
+        position = RoverPosition(
+            parsedStartingPosition.first,
+            parsedStartingPosition.second,
+            parsedStartingPosition.third
+        )
+    }
+
+    private fun parseStartingPosition(p: String): Triple<Int, Int, Direction> {
         val startingPosition = p.split(' ')
-        if (startingPosition.size >= 3) { // magic number, data clump
-            this.position = RoverPosition(
-                startingPosition[0].toInt(),
-                startingPosition[1].toInt(),
-                Direction.mapToDirection(startingPosition[2][0])
-            )
+        if (startingPosition.size < 3) {
+            throw RuntimeException("Invalid starting position. Less than 3 arguments are provided. Unable to determine the rover's position.")
         }
+        return Triple(
+            startingPosition[0].toInt(),
+            startingPosition[1].toInt(),
+            Direction.mapToDirection(startingPosition[2][0])
+        )
     }
 
     fun go(commands: String) {
@@ -46,16 +56,12 @@ class RoverPosition {
         this.direction = direction
     }
 
-    fun getX(): Int {
+    private fun getX(): Int {
         return xx
     }
 
-    fun getY(): Int {
+    private fun getY(): Int {
         return yy
-    }
-
-    fun getDirection(): Direction {
-        return direction
     }
 
     fun getCurrentPosition(): String {

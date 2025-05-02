@@ -53,5 +53,4 @@
     - [X] move the move method to RoverPosition class
 
 - [X] Move getCurrentPosition to RoverPosition class
-
   
