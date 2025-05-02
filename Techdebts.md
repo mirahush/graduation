@@ -18,6 +18,8 @@
       - [X] initialize direction property in the constructor of Rover
       - [X] update the method called getCurrentPosition to return the direction in Enum format
         - [X] create enum value for directions so that the first letter is returned
+      - [X] update the method called determineNextDirectionForMoveCommand to work with position.direction
+        
  
 ### Done
 - [X] Add a test for HelloWorld class.
