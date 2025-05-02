@@ -15,7 +15,7 @@ class RoverPosition {
         return "$xx $yy ${direction.shortName}"
     }
 
-    fun executeCommand(command: Char) { // primitive obsession
+    fun executeCommand(command: Char) {
         when (command) {
             'L' -> turnLeft()
             'R' -> turnRight()
@@ -23,11 +23,11 @@ class RoverPosition {
         }
     }
 
-    private fun turnLeft() { // feature envy
+    private fun turnLeft() {
         direction = Direction.whatIsOnTheLeftOf(direction)
     }
 
-    private fun turnRight() { // feature envy
+    private fun turnRight() {
         direction = Direction.whatIsOnTheRightOf(direction)
     }
 
