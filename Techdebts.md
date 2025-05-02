@@ -10,6 +10,7 @@
       - [X] return mapped enum in whatIsOnTheLeftOf
     - [X] Use mapper in whatIsOnTheRightOf method
       - [X] return mapped enum in whatIsOnTheLeftOf
-
+    - [X] Move whatIsOnTheLeftOf and whatIsOnTheRightOf to Direction class
+ 
 ### Done
 - [X] Add a test for HelloWorld class.

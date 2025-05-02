@@ -35,7 +35,7 @@ class Rover {
     }
 
     private fun determineNextDirectionForMoveCommand() {
-        var direction = Direction.map(position.dd) // Primitive Obsession
+        var direction = Direction.mapToDirection(position.dd) // Primitive Obsession
         when (direction) {
             East -> moveRight()
             South -> moveDown()
@@ -61,11 +61,11 @@ class Rover {
     }
 
     private fun determineNextDirectionForRightCommand() {
-        position.dd = whatIsOnTheRightOf(position.dd)
+        position.dd = Direction.whatIsOnTheRightOf(position.dd)
     }
 
     private fun determineNextDirectionForLeftCommand() {
-        position.dd = whatIsOnTheLeftOf(position.dd)
+        position.dd = Direction.whatIsOnTheLeftOf(position.dd)
     }
 
     fun getCurrentPosition(): String {
@@ -74,27 +74,6 @@ class Rover {
 
     private var position = RoverPosition()
 
-    companion object {
-        private fun whatIsOnTheLeftOf(direction: Char): Char { // Primitive Obsession
-            val mappedDirection = Direction.map(direction)
-            return when (mappedDirection) {
-                East -> Direction.map(North)
-                North -> Direction.map(West)
-                West -> Direction.map(South)
-                South -> Direction.map(East)
-            }
-        }
-
-        private fun whatIsOnTheRightOf(direction: Char): Char {
-            val mappedDirection = Direction.map(direction)
-            return when (mappedDirection) {
-                East -> Direction.map(South)
-                South -> Direction.map(West)
-                West -> Direction.map(North)
-                North -> Direction.map(East)
-            }
-        }
-    }
 }
 
 class RoverPosition {
