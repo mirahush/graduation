@@ -9,6 +9,7 @@ class Rover {
             position.xx = s[0].toInt()
             position.yy = s[1].toInt()
             position.dd = s[2][0]
+            position.direction = Direction.mapToDirection(s[2][0])
         }
     }
 

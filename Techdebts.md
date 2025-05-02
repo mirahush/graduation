@@ -15,6 +15,7 @@
     - [] making sure that wherever we are using Direction in Char format, we are also using Enum format
       - [X] update whatIsOnTheRightOf to accept Enum and char both as input
       - [X] update whatIsOnTheLeftOf to accept Enum and char both as input
+      - [X] initialize direction property in the constructor of Rover
  
 ### Done
 - [X] Add a test for HelloWorld class.
