@@ -1,10 +1,10 @@
 package org.example
 
-enum class Direction {
-    East(),
-    West(),
-    North(),
-    South();
+enum class Direction(var shortName: Char) {
+    East('E'),
+    West('W'),
+    North('N'),
+    South('S');
 
     companion object {
         fun mapToDirection(direction: Char): Direction {

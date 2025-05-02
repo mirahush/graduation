@@ -16,6 +16,8 @@
       - [X] update whatIsOnTheRightOf to accept Enum and char both as input
       - [X] update whatIsOnTheLeftOf to accept Enum and char both as input
       - [X] initialize direction property in the constructor of Rover
+      - [] update the method called getCurrentPosition to return the direction in Enum format
+        - [X] create enum value for directions so that the first letter is returned
  
 ### Done
 - [X] Add a test for HelloWorld class.
