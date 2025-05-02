@@ -10,20 +10,24 @@ class Rover {
         }
     }
 
-    fun go(commands: String) { // long method, duplicate code, feature envy
+    fun go(commands: String) {
         for (command in commands) {
-            when (command) {
-                'L' -> {
-                    determineNextDirectionForLeftCommand()
-                }
+            executeCommand(command)
+        }
+    }
 
-                'R' -> {
-                    determineNextDirectionForRightCommand()
-                }
+    private fun executeCommand(command: Char) { // primitive obsession
+        when (command) {
+            'L' -> {
+                determineNextDirectionForLeftCommand()
+            }
 
-                'M' -> {
-                    determineNextDirectionForMoveCommand()
-                }
+            'R' -> {
+                determineNextDirectionForRightCommand()
+            }
+
+            'M' -> {
+                determineNextDirectionForMoveCommand()
             }
         }
     }
