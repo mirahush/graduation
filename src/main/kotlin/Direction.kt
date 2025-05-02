@@ -4,5 +4,18 @@ enum class Direction {
     East(),
     West(),
     North(),
-    South(),
+    South();
+
+    companion object {
+        fun map(direction: Char): Direction {
+            return when (direction) {
+                'N' -> North
+                'W' -> West
+                'S' -> South
+                'E' -> East
+                else -> throw IllegalArgumentException("Invalid direction")
+            }
+        }
+    }
+
 }

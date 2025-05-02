@@ -33,11 +33,12 @@ class Rover {
     }
 
     private fun determineNextDirectionForMoveCommand() {
-        when (position.dd) {
-            'E' -> moveRight()
-            'S' -> moveDown()
-            'W' -> moveLeft()
-            'N' -> moveUp()
+        var direction = Direction.map(position.dd) // Primitive Obsession
+        when (direction) {
+            Direction.East -> moveRight()
+            Direction.South -> moveDown()
+            Direction.West -> moveLeft()
+            Direction.North -> moveUp()
         }
     }
 
