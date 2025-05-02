@@ -23,8 +23,8 @@
  
 
 
-- [] Make properties private
-    - [] Make properties private in RoverPosition
+- [X] Make properties private
+    - [X] Make properties private in RoverPosition
         - [X] make direction property private
           - [X] create a getter for direction property
           - [X] create a setter for direction property
@@ -40,4 +40,10 @@
           -[X] create a setter for y property
           -[X] use getter for accessing y property
           -[X] use setter for updating y property
-    - [] Make properties private in Rover
+
+- [] Remove setters from RoverPosition class
+  - [X] Move instantiation of Position from Rover class to RoverPosition class
+      - [X] create a constructor in RoverPosition class
+      - [X] Use the constructor in Rover class
+  - [] Move position changing logic to RoverPosition class
+    - 

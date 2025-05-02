@@ -3,14 +3,16 @@ package org.example
 import org.example.Direction.*
 
 class Rover {
-    private var position = RoverPosition()
+    private lateinit var position: RoverPosition
 
     constructor(p: String) {
         val s = p.split(' ')
         if (s.size >= 3) { // magic number, data clump
-            this.position.setX(s[0].toInt())
-            this.position.setY(s[1].toInt())
-            this.position.setDirection(Direction.mapToDirection(s[2][0]))
+            this.position = RoverPosition(
+                s[0].toInt(),
+                s[1].toInt(),
+                Direction.mapToDirection(s[2][0])
+            )
         }
     }
 
@@ -78,6 +80,12 @@ class RoverPosition {
     private var xx: Int = 0
     private var yy: Int = 0
     private var direction: Direction = North
+
+    constructor(x: Int, y: Int, direction: Direction) {
+        this.xx = x
+        this.yy = y
+        this.direction = direction
+    }
 
     fun getX(): Int {
         return xx
